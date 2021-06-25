@@ -1,0 +1,146 @@
+body {
+	font-family:"Helvetica Neue", Arial, sans-serif; 
+	background-color: #001f3f;
+	display: flex;
+	color: #DDDDDD;
+	justify-content: center;
+	margin: 50px;
+	flex-wrap: wrap;
+}
+a {
+	color: #DDD;
+}
+a:hover {
+	color: #EE810E;
+}
+ol {
+	counter-reset: li; /* initiate a counter */
+	margin-left: 3em; /* Remove the default left margin */
+	padding-left: 3em; /* Remove the default left padding */
+}
+ol > li {
+	position:relative; /* Create a positioning context */
+	padding:  20px;
+	margin: 40px 0px;
+	border-radius: 0 0 0.7rem 0;
+	list-style: none; /* Disable the normal item numbering */
+	cursor:  pointer;
+	transition: .3s;
+}
+ol > li:first-child, 
+ol > li:last-child {
+	margin: 0;
+}
+ol > li:before {
+	content:counter(li); /* Use the counter as content */
+	counter-increment: li; /* Increment the counter by 1 */    
+	/* Position and style the number */   
+	position:absolute;      
+	top: 0px;      
+	left: -1.5em;      
+	-moz-box-sizing:border-box;     
+	-webkit-box-sizing:border-box;      
+	box-sizing:border-box;      
+	width:1.5em;
+	height: 100%;
+	margin-right:8px;      
+	padding:4px;    
+	font-weight:bold;         
+	text-align:center;
+	font-size: 4em;
+	text-align: right;
+	transition: .3s;
+
+}
+/* cores dos itens pares */
+ol > li:nth-child(2n):before,
+ol > li:nth-child(2n)
+{
+	background-color: #DDDDDD;
+	color: #111111;
+}
+ol > li:hover:nth-child(2n):before,
+ol > li:hover:nth-child(2n){
+	box-shadow: 0 0 3px 1px #DDDDDD;
+}
+
+/* cores dos itens impares */
+ol > li:nth-child(2n-1):before,
+ol > li:nth-child(2n-1)
+{
+	color: #FFF;
+	background-color: #EE810E;
+}
+ol > li:hover:nth-child(2n-1):before,
+ol > li:hover:nth-child(2n-1){
+	box-shadow: 0 0 3px 1px #EE810E;
+}
+p {
+	margin:  0px 0px 5px 0px;
+}
+.exercicios {
+	text-align: center;
+}
+.exercicios > .form {
+	margin-top: 2em;
+}
+.exercicios > .form input{
+	border: 1px solid transparent;
+	border-radius: 3px;
+	padding: 5px;
+	background-color: none;
+}
+.exercicios > .form button {
+	border: 1px solid #DDD;
+	border-radius: 3px;
+	padding: 6px;
+	background-color: transparent;
+	color:  #DDD;
+	cursor: pointer;
+	transition: .3s;
+}
+.exercicios > .form button:hover{
+	background-color: #DDD;
+	color: #001f3f;
+}
+#resolucao, .codigo {
+	margin-top:  50px;
+}
+.oculto {
+	display: none;
+}
+#resolucao {
+	line-height: 25px;
+}
+.codigo {
+	padding: 0px 20px 30px 20px;
+	font-family: sans-serif;
+	text-align: left;
+	background-color: #3f3f3f;
+	color: #DDD;
+	line-height: 30px;
+	white-space: pre-line; /* exibir texto com a quebra de linha */
+}
+.codigo .title {
+	width:  100%;
+	margin-left: -20px;
+	background-color: #EE810E;
+	padding:  10px 20px;
+	margin-top: -30px;
+	color: #fff;
+	text-transform: uppercase;
+	font-weight: bold;
+}
+.homeButton {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-top: 50px;
+}
+.homeButton img {
+	opacity: 0.8;
+	width: 50px;
+}
+.homeButton img:hover {
+	opacity: 1;
+}

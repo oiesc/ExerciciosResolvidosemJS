@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Exercício 10</title>
+	<link rel="stylesheet" href="../testeAlgoritmos.css"/>
+
+	<script>
+		function procurarValorComum() {
+			// obter valores do input como array
+			let array = Array.from(document.getElementById('array').value)
+
+			// converter elementos do array para inteiro, para ficar mais bonito
+			array.map(function (element, i) {
+				array[i] = parseInt(element)
+			})
+
+			// receber valores
+			let array2 = Array.from(document.getElementById('valor').value)
+
+			// converter elementos do array para inteiro, para ficar mais bonito
+			array2.map(function (element, i) {
+				array2[i] = parseInt(element)
+			})
+
+			// variavel para imprimir saida
+			let saida = returnValorComum(array, array2)
+
+			// imprime os arrays na tela
+			document.getElementById('codigo').classList.remove('oculto')
+			document.getElementById('codigo2').classList.remove('oculto')
+			document.getElementById('resolucao').innerHTML = 'Entrada: (' + JSON.stringify(array) + ', ' + JSON.stringify(array2) + ')' + '<br>Valor(es) em comum: ' + saida
+		}
+
+		function returnValorComum(array, array2) {
+			// a função filter pode comparar se um item do array1 existe no array2
+			let value = array.filter(item => array2.includes(item))
+
+			return value
+			
+		}
+	</script>
+
+</head>
+<body>
+	<div class="exercicios">
+		<p>10. Implemente um método que encontre os valores comuns entre dois arrays. </p>
+
+		<p>Entrada do método ([6, 8], [8, 9]), Resultado do método: [8]</p>
+
+		<div class="form">
+			<input id="array" type="text" value="68" placeholder="Array" />
+			<input id="valor" type="text" value="89" placeholder="Valor" />
+			<button onClick="procurarValorComum()">Procurar valor(es)</button>
+		</div>
+
+		<div id="resolucao">
+		</div>
+		<div id="codigo" class="codigo oculto">
+			<div class="title">Opção 1:</div>
+			function procurarValorComum() {
+				// obter valores do input como array
+				let array = Array.from(document.getElementById('array').value)
+
+				// converter elementos do array para inteiro, para ficar mais bonito
+				array.map(function (element, i) {
+					array[i] = parseInt(element)
+				})
+
+				// receber valores
+				let array2 = Array.from(document.getElementById('valor').value)
+
+				// converter elementos do array para inteiro, para ficar mais bonito
+				array2.map(function (element, i) {
+					array2[i] = parseInt(element)
+				})
+
+				// variavel para imprimir saida
+				let saida = returnValorComum(array, array2)
+
+				// imprime o array na tela (é necessário ter uma div com a id '<b>#resolucao'</b>)
+				document.getElementById('codigo').classList.remove('oculto')
+				document.getElementById('resolucao').innerHTML = 'Entrada: (' + JSON.stringify(array) + ', ' + JSON.stringify(array2) + ')' + ' Saída: ' + saida
+			}
+
+			function returnValorComum(array, array2) {
+				// a função filter pode comparar se um item do array1 existe no array2
+				let value = array.filter(function(item) {
+					if(array2.includes(item))
+					return item
+				})
+
+				return value
+
+			}
+		</div>
+
+		<div id="codigo2" class="codigo oculto">
+			<div class="title">Opção 2:</div>
+			function procurarValorComum() {
+				// obter valores do input como array
+				let array = Array.from(document.getElementById('array').value)
+
+				// converter elementos do array para inteiro, para ficar mais bonito
+				array.map(function (element, i) {
+					array[i] = parseInt(element)
+				})
+
+				// receber valores
+				let array2 = Array.from(document.getElementById('valor').value)
+
+				// converter elementos do array para inteiro, para ficar mais bonito
+				array2.map(function (element, i) {
+					array2[i] = parseInt(element)
+				})
+
+				// variavel para imprimir saida
+				let saida = returnValorComum(array, array2)
+
+				// imprime o array na tela (é necessário ter uma div com a id '<b>#resolucao'</b>)
+				document.getElementById('resolucao').innerHTML = 'Entrada: (' + JSON.stringify(array) + ', ' + JSON.stringify(array2) + ')' + '<br>Saída: ' + saida
+			}
+
+			function returnValorComum(array, array2) {
+				// a função filter pode comparar se um item do array1 existe no array2
+				// dessa vez com arrow function
+				let value = array.filter(item => array2.includes(item))
+
+				return value
+
+			}
+		</div>
+		<div class="homeButton">
+			<a href="../index.html">
+				<img src="../home-icon.png" alt="Home" title="Home"/>
+			</a>
+		</div>
+	</div>
+</body>
+</html>

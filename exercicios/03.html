@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Exercício 03</title>
+	<link rel="stylesheet" href="../testeAlgoritmos.css"/>
+
+	<script>
+		function arrayLimpo() {
+			// Array de entrada
+			let array = [1, 2, '', undefined]
+
+			// Array sem itens desnecessários
+			let newArray = array.filter(function (i) {
+				return i;
+			})
+
+			// imprime os arrays na tela
+			document.getElementById('codigo').classList.remove('oculto')
+			document.getElementById('resolucao').innerHTML = 'Entrada: ' + JSON.stringify(array)
+			+ '<br>Saída: ' + JSON.stringify(newArray)
+		}
+	</script>
+
+</head>
+<body>
+	<div class="exercicios">
+		<p>3. Implemente um método que limpe os itens desnecessários de um array (false, undefined, strings vazias, zero, null).</p>
+
+		<p>Entrada do método ([1,2,'', undefined]), Resultado do método: [1,2]</p>
+
+		<div class="form">
+			<button onClick="arrayLimpo()">Mostrar código</button>
+		</div>
+
+		<div id="resolucao">
+		</div>
+		<div id="codigo" class="codigo oculto">
+			<div class="title">Código:</div>
+			function arrayLimpo() {
+				// Array de entrada
+				let array = [1, 2,'', undefined]
+
+				// Array sem itens desnecessários
+				let newArray = array.filter(function (i) {
+					return i;
+				})
+
+				// imprime o array na tela (é necessário ter uma div com a id '<b>#resolucao'</b>)
+				document.getElementById('resolucao').innerHTML = 'Entrada: ' + JSON.stringify(array)
+				+ 'Saída: ' + JSON.stringify(newArray)
+			}
+		</div>
+		<div class="homeButton">
+			<a href="../index.html">
+				<img src="../home-icon.png" alt="Home" title="Home"/>
+			</a>
+		</div>
+	</div>
+</body>
+</html>

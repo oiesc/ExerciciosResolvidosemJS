@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Exercício 08</title>
+	<link rel="stylesheet" href="../testeAlgoritmos.css"/>
+
+	<script>
+		function removeAninhaArray() {
+			// obter valores do input como array
+			let array = [1, 2, [3], [4, 5]]
+
+			let newArray = returnArray(array)
+
+			// imprime os arrays na tela
+			document.getElementById('codigo').classList.remove('oculto')
+			document.getElementById('resolucao').innerHTML = 'Entrada: ' + JSON.stringify(array)
+			+ '<br>Saída: ' + JSON.stringify(newArray)
+		}
+
+		function returnArray(array) {
+			// O método flat cria um novo array com todos elementos sub-arrays concatenados nele de forma recursiva até a profundidade especificada
+			let newArray = array.flat(Infinity)
+
+			return newArray
+		}
+	</script>
+
+</head>
+<body>
+	<div class="exercicios">
+		<p>8. Implemente um método que remova os aninhamentos de um array de arrays para um array unico.</p>
+
+		<p>Entrada do método ([1, 2, [3], [4, 5]]), Resultado do método: [1, 2, 3, 4, 5]</p>
+
+		<div class="form">
+			<button onClick="removeAninhaArray()">Mostrar Código</button>
+		</div>
+
+		<div id="resolucao">
+		</div>
+		<div id="codigo" class="codigo oculto">
+			<div class="title">Código:</div>
+			function removeAninhaArray() {
+				// obter valores do input como array
+				let array = [1, 2, [3], [4, 5]]
+
+				let newArray = returnArray(array)
+
+				// imprime o array na tela (é necessário ter uma div com a id '<b>#resolucao'</b>)
+				document.getElementById('resolucao').innerHTML = 'Entrada: ' + JSON.stringify(array)
+				+ ' Saída: ' + JSON.stringify(newArray)
+			}
+
+			function returnArray(array) {
+				// O método flat cria um novo array com todos elementos sub-arrays concatenados nele de forma recursiva até a profundidade especificada
+				let newArray = array.flat(Infinity)
+
+				return newArray
+			}
+		</div>
+		<div class="homeButton">
+			<a href="../index.html">
+				<img src="../home-icon.png" alt="Home" title="Home"/>
+			</a>
+		</div>
+	</div>
+</body>
+</html>

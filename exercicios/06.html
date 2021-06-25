@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Exercício 06</title>
+	<link rel="stylesheet" href="../testeAlgoritmos.css"/>
+
+	<script>
+		function removerItensDuplicados() {
+			// obter valores do input como array
+			let array = Array.from(document.getElementById('array').value)
+
+			// chamar método que retorna o array
+			let newArray = returnArray(array)
+
+			// imprime os arrays na tela
+			document.getElementById('codigo').classList.remove('oculto')
+			document.getElementById('codigo2').classList.remove('oculto')
+			document.getElementById('resolucao').innerHTML = 'Entrada: ' + JSON.stringify(array) 
+			+ '<br>Saída: ' + JSON.stringify(newArray)
+		}
+
+		function returnArray(array) {
+			// array que vai receber os novos itens
+			// Ao utilizar o médoto Set, ele automaticamente remove valores duplicados
+			let newArray = [...new Set (array)]
+
+			return newArray
+		}
+	</script>
+
+</head>
+<body>
+	<div class="exercicios">
+		<p>6. Implemente um método que retorne um array, sem valores duplicados.</p>
+
+		<p>Entrada do método ([1,2,3,3,2,4,5,4,7,3]), Resultado do método: [1,2,3,4,5,7]</p>
+
+		<div class="form">
+			<input id="array" type="text" value="1233245473" placeholder="Entrada" />
+			<button onClick="removerItensDuplicados()">Retornar array</button>
+		</div>
+
+		<div id="resolucao">
+		</div>
+		<div id="codigo" class="codigo oculto">
+			<div class="title">OPÇÃO 1:</div>
+			function removerItensDuplicados() {
+				// obter valores do input como array
+				let array = Array.from(document.getElementById('array').value)
+
+				// chamar método que retorna o array
+				let newArray = returnArray(array)
+
+				// imprime os arrays na tela
+				document.getElementById('codigo').classList.remove('oculto')
+				document.getElementById('codigo2').classList.remove('oculto')
+				document.getElementById('resolucao').innerHTML = 'Entrada: ' + JSON.stringify(array) 
+				+ ' Saída: ' + JSON.stringify(newArray)
+			}
+
+			function returnArray(array) {
+				// array que vai receber os novos itens
+				// Ao utilizar o médoto Set, ele automaticamente remove valores duplicados
+				let newArray = [...new Set (array)]
+
+				return newArray
+			}
+		</div>
+
+		<div id="codigo2" class="codigo oculto">
+			<div class="title">OPÇÃO 2:</div>
+			function removerItensDuplicados() {
+				// obter valores do input como array
+				let array = Array.from(document.getElementById('array').value)
+
+				// chamar método que retorna o array
+				let newArray = returnArray(array)
+
+				// imprime o array na tela (é necessário ter uma div com a id '<b>#resolucao'</b>)
+				document.getElementById('codigo').classList.remove('oculto')
+				document.getElementById('codigo2').classList.remove('oculto')
+				document.getElementById('resolucao').innerHTML = 'Entrada: ' + JSON.stringify(array) 
+				+ ' Saída: ' + JSON.stringify(newArray)
+			}
+
+			function returnArray(array) {
+				// array que vai receber os novos itens
+				// o médoto filter vai evitar que o novo array receba valores duplicados
+				let newArray = array.filter((item, index) => array.indexOf(item) === index)
+
+				return newArray
+			}
+		</div>
+		<div class="homeButton">
+			<a href="../index.html">
+				<img src="../home-icon.png" alt="Home" title="Home"/>
+			</a>
+		</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Exercício 04</title>
+	<link rel="stylesheet" href="../testeAlgoritmos.css"/>
+
+	<script>
+		function arrayToObject() {
+			// Array de entrada
+			let arrays = [['c', 2], ['d', 4]]
+
+			// o método Object.fromEntries faz com que o array seja convertido em object conforme solicitado pelo exercicio
+			convertArrayToObject = Object.fromEntries(arrays)
+
+			// imprime os arrays na tela
+			document.getElementById('codigo').classList.remove('oculto')
+			document.getElementById('resolucao').innerHTML = 'Entrada: ' + JSON.stringify(arrays)
+			+ '<br>Saída: ' + JSON.stringify(convertArrayToObject)
+		}
+	</script>
+
+</head>
+<body>
+	<div class="exercicios">
+		<p>4. Implemente um método que a partir de um array de arrays, converta em um objeto com chave e valor.</p>
+
+		<p>Entrada do método ([["c",2],["d",4]]), Resultado do métdodo: {c:2, d:4}</p>
+
+		<div class="form">
+			<button onClick="arrayToObject()">Mostrar código</button>
+		</div>
+
+		<div id="resolucao">
+		</div>
+		<div id="codigo" class="codigo oculto">
+			<div class="title">Código:</div>
+			function arrayToObject() {
+				// Array de entrada
+				let arrays = [['c', 2], ['d', 4]]
+
+				// o méteodo Object.fromEntries faz com que o array seja convertido em object conforme solicitado pelo exercicio
+				convertArrayToObject = Object.fromEntries(arrays)
+
+				// imprime o array na tela (é necessário ter uma div com a id '<b>#resolucao'</b>)
+				document.getElementById('codigo').classList.remove('oculto')
+				document.getElementById('resolucao').innerHTML = 'Entrada: ' + JSON.stringify(arrays)
+				+ 'Saída: ' + JSON.stringify(convertArrayToObject)
+			}
+		</div>
+		<div class="homeButton">
+			<a href="../index.html">
+				<img src="../home-icon.png" alt="Home" title="Home"/>
+			</a>
+		</div>
+	</div>
+</body>
+</html>

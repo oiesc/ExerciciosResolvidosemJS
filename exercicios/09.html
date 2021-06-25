@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Exercício 09</title>
+	<link rel="stylesheet" href="../testeAlgoritmos.css"/>
+
+	<script>
+		function dividirArray() {
+			// obter valores do input como array
+			let array = Array.from(document.getElementById('array').value)
+
+			// converter elementos do array para inteiro, para ficar mais bonito
+			array.map(function (element, i) {
+				array[i] = parseInt(element)
+			})
+
+			// receber valores
+			let valor = document.getElementById('valor').value
+
+			// variavel para imprimir saida
+			let saida = returnArraySeparado(array, valor)
+
+			// imprime os arrays na tela
+			document.getElementById('codigo').classList.remove('oculto')
+			document.getElementById('resolucao').innerHTML = 'Entrada: (' + JSON.stringify(array) + ', ' + valor + ')'
+			+ '<br>Saída: ' + JSON.stringify(saida)
+		}
+
+		function returnArraySeparado(array, valor) {
+			let newArray = []
+			let aux = 0
+
+			// laço para percorrer e distribuir os valores no novo array
+			for (let i = 0; i < array.length; i++) {
+				// se o array estiver vazio, inicializar com um novo array
+				if(newArray[aux] === undefined)
+					newArray[aux] = [];
+
+				// colocar elemento na posição 'i'  na posição 'aux' no novo array
+				newArray[aux].push(array[i])
+
+				// distribuir elementos por grupos
+				// calculo para a variavel auxiliar receber o valor da nova posição
+				if((i + 1) % valor === 0) {
+					aux++
+				}
+			}
+
+			return newArray
+			
+		}
+	</script>
+
+</head>
+<body>
+	<div class="exercicios">
+		<p>9. Implemente um método divida um array por uma quantidade passada por parâmetro.</p>
+
+		<p>Entrada do método ([1, 2, 3, 4, 5], 2), Resultado do método: [[1, 2], [3, 4], [5]]</p>
+
+		<div class="form">
+			<input id="array" type="text" value="12345" placeholder="Array" />
+			<input id="valor" type="text" value="2" placeholder="Valor" />
+			<button onClick="dividirArray()">Dividir Array</button>
+		</div>
+
+		<div id="resolucao">
+		</div>
+		<div id="codigo" class="codigo oculto">
+			<div class="title">Código:</div>
+			function dividirArray() {
+				// obter valores do input como array
+				let array = Array.from(document.getElementById('array').value)
+
+				// converter elementos do array para inteiro, para ficar mais bonito
+				array.map(function (element, i) {
+					array[i] = parseInt(element)
+				})
+
+				// receber valores
+				let valor = document.getElementById('valor').value
+
+				// variavel para imprimir saida
+				let saida = returnArraySeparado(array, valor)
+
+				// imprime o array na tela (é necessário ter uma div com a id '<b>#resolucao'</b>)
+				document.getElementById('resolucao').innerHTML = 'Entrada: (' + JSON.stringify(array) + ', ' + valor + ')'
+				+ ' Saída: ' + JSON.stringify(saida)
+			}
+
+			function returnArraySeparado(array, valor) {
+				let newArray = []
+				let aux = 0
+
+				// laço para percorrer e distribuir os valores no novo array
+				for (let i = 0; i < array.length; i++) {
+					// se o array estiver vazio, inicializar com um novo array
+					if(newArray[aux] === undefined)
+					newArray[aux] = [];
+
+					// colocar elemento na posição 'i'  na posição 'aux' no novo array
+					newArray[aux].push(array[i])
+
+					// distribuir elementos por grupos
+					// calculo para a variavel auxiliar receber o valor da nova posição
+					if((i + 1) % valor === 0) {
+						aux++
+					}
+				}
+
+				return newArray
+
+			}
+		</div>
+		<div class="homeButton">
+			<a href="../index.html">
+				<img src="../home-icon.png" alt="Home" title="Home"/>
+			</a>
+		</div>
+	</div>
+</body>
+</html>

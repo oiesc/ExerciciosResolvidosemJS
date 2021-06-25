@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Exercício 05</title>
+	<link rel="stylesheet" href="../testeAlgoritmos.css"/>
+
+	<script>
+		function excluirItens() {
+			// obter valores do input como array
+			let array = Array.from(document.getElementById('array').value)
+
+			// obter valores dos itens
+			let value1 = document.getElementById('entrada1').value
+			let value2 = document.getElementById('entrada2').value 
+
+			// chamar método que retorna o array
+			let newArray = returnArray(array, value1, value2)
+
+			// imprime os arrays na tela
+			document.getElementById('codigo').classList.remove('oculto')
+			document.getElementById('resolucao').innerHTML = 'Entrada: ' + JSON.stringify(array) 
+			+ '<br>Saída: ' + JSON.stringify(newArray)
+		}
+
+		function returnArray(array, value1, value2) {
+			// array que vai receber os novos itens
+			let newArray = []
+
+			// laço que vai comparar os elementos
+			for (i = 0; i < array.length; i++) {
+				// se for diferente dos valores passados, irá adicionar ao novo array
+				if (array[i] !== value1 && array[i] !== value2) 
+					newArray.push(array[i])
+			}
+
+			return newArray
+		}
+	</script>
+
+</head>
+<body>
+	<div class="exercicios">
+		<p>5. Implemente um método que retorne um array, sem os itens passados por parâmetro depois do array de entrada.</p>
+
+		<p>Entrada do método ([5,4,3,2,5], 5,3), Resultado do método: [4,2]</p>
+
+		<div class="form">
+			<input id="array" type="text" value="54325" placeholder="Entrada" />
+			<input id="entrada1" type="text" value="5" placeholder="Valor 1" />
+			<input id="entrada2" type="text" value="3" placeholder="Valor 2" />
+			<button onClick="excluirItens()">Retornar array</button>
+		</div>
+
+		<div id="resolucao">
+		</div>
+		<div id="codigo" class="codigo oculto">
+			<div class="title">Código:</div>
+			function excluirItens() {
+				// obter valores do input como array
+				let array = Array.from(document.getElementById('array').value)
+
+				// obter valores dos itens
+				let value1 = document.getElementById('entrada1').value
+				let value2 = document.getElementById('entrada2').value 
+
+				// chamar método que retorna o array
+				let newArray = returnArray(array, value1, value2)
+
+				// imprime o array na tela (é necessário ter uma div com a id '<b>#resolucao'</b>)
+				document.getElementById('resolucao').innerHTML = 'Entrada: ' + JSON.stringify(array) 
+				+ ' Saída: ' + JSON.stringify(newArray)
+			}
+
+			function returnArray(array, value1, value2) {
+				// array que vai receber os novos itens
+				let newArray = []
+
+				// laço que vai comparar os elementos
+				for (i = 0; i < array.length; i++) {
+					// se for diferente dos valores passados, irá adicionar ao novo array
+					if (array[i] !== value1 && array[i] !== value2) 
+					newArray.push(array[i])
+				}
+
+				return newArray
+			}
+		</div>
+		<div class="homeButton">
+			<a href="../index.html">
+				<img src="../home-icon.png" alt="Home" title="Home"/>
+			</a>
+		</div>
+	</div>
+</body>
+</html>

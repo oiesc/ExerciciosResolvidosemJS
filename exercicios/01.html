@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Exercício 01</title>
+	<link rel="stylesheet" href="../testeAlgoritmos.css"/>
+
+	<script>
+		function getValues() {
+			// obter valores do input
+			let a = document.getElementById('entrada1').value
+			let b = document.getElementById('entrada2').value
+
+			// chamar o método que cria o array
+			criarArray(a, b)
+		}
+
+		function criarArray(a, b) {
+			// inicializa um array vazio
+			let array = []
+
+			// insere os elementos no array
+			for (i=0; i<a; i++) {
+				array.push(b)
+			}
+			// imprime o array na tela
+			document.getElementById('codigo').classList.remove('oculto')
+			document.getElementById('resolucao').innerHTML = 'Resultado: ' + JSON.stringify(array)
+		}
+	</script>
+
+</head>
+<body>
+	<div class="exercicios">
+		<p>01. Implemente um método que crie um novo array baseado nos valores passados.</p>
+
+		<p>Entradas do método (3,a), Resultado do método: ['a', 'a', 'a']</p>
+
+		<div class="form">
+			<input id="entrada1" type="number" min="1" placeholder="Entrada 1" value="3"/>
+			<input id="entrada2" type="text" placeholder="Entrada 2" value="a"/>	
+			<button onClick="getValues()">Criar array</button>
+		</div>
+
+		<div id="resolucao">
+		</div>
+		<div id="codigo" class="codigo oculto">
+			<div class="title">Código:</div>
+			function getValues() {
+				// obter valores do input
+				let a = document.getElementById('entrada1').value
+				let b = document.getElementById('entrada2').value
+
+				// chamar o método que cria o array
+				criarArray(a, b)
+			}
+
+			function criarArray(a, b) {
+				// inicializa um array vazio
+				let array = []
+
+				// insere os elementos no array
+				for (i = 0; i < a; i++) {
+					array.push(b)
+				}
+
+				// imprime o array na tela (é necessário ter uma div com a id '<b>#resolucao'</b>)
+				document.getElementById('resolucao').innerHTML = 'Resultado: ' + JSON.stringify(array)
+			}
+		</div>
+		<div class="homeButton">
+			<a href="../index.html">
+				<img src="../home-icon.png" alt="Home" title="Home"/>
+			</a>
+		</div>
+	</div>
+</body>
+</html>
