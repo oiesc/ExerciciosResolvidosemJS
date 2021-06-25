@@ -14,9 +14,9 @@
 			let b = []
 
 			// salvar valores invertidos no array auxiliar
-			for (i = 0; i < a.length; i++)
-
+			for (i = 0; i < a.length; i++) {
 				b[i] = a[a.length - 1 - i]
+			}
 
 			// imprime os arrays na tela
 			document.getElementById('codigo').classList.remove('oculto')
@@ -49,9 +49,9 @@
 				let b = []
 
 				// salvar valores invertidos no array auxiliar
-				for (i = 0; i < a.length; i++)
-
-				b[i] = a[a.length - 1 - i]
+				for (i = 0; i < a.length; i++) {
+					b[i] = a[a.length - 1 - i]
+				}
 
 				// imprime o array na tela (é necessário ter uma div com a id '<b>#resolucao'</b>)
 				document.getElementById('resolucao').innerHTML = 'Entrada: ' + JSON.stringify(a) 
