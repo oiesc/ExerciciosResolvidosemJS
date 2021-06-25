@@ -1,5 +1,6 @@
 # TesteAlgoritmos
- Resolução de alguns Exercícios em JavaScript em forma de página WEB
+ Resolução de alguns Exercícios em JavaScript em forma de página WEB<br>
+ (acesse <a href="https://oiesc.github.io/ExerciciosResolvidosemJS/index.html" target="_blank">aqui</a>)
 
 1. Implemente um método que crie um novo array baseado nos valores passados.<br>
 Entradas do método (3,a), Resultado do método: ['a', 'a', 'a']
