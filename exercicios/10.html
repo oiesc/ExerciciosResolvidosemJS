@@ -36,6 +36,12 @@
 			// a função filter pode comparar se um item do array1 existe no array2
 			let value = array.filter(item => array2.includes(item))
 
+			// remover valores duplicados
+			value = [...new Set(value)]
+
+			// ordenar a saída
+			value.sort((a, b) => (a-b))
+
 			return value
 			
 		}
@@ -90,6 +96,12 @@
 					return item
 				})
 
+				// remover valores duplicados
+				value = [...new Set(value)]
+
+				// ordenar a saída
+				value.sort((a, b) => (a-b))
+
 				return value
 
 			}
@@ -125,6 +137,12 @@
 				// a função filter pode comparar se um item do array1 existe no array2
 				// dessa vez com arrow function
 				let value = array.filter(item => array2.includes(item))
+
+				// remover valores duplicados
+				value = [...new Set(value)]
+
+				// ordenar a saída
+				value.sort((a, b) => (a-b))
 
 				return value
 
