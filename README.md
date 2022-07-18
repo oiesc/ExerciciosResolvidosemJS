@@ -32,5 +32,8 @@ Entrada do método ([1, 2, 3, 4, 5], 2), Resultado do método: [[1, 2], [3, 4], 
 10. Implemente um método que encontre os valores comuns entre dois arrays.<br>
 Entrada do método ([6, 8], [8, 9]), Resultado do método: [8]<br>
 
+11. Implemente uma função que retorne o maior palíndromo dentro de uma sentença.<br>
+Exemplo: <b>testeararatst</b> - retorna <b>arara</b><br>
+
 ![img](print1.png)
 ![img](print2.png)
