@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Exercício 11</title>
+	<link rel="stylesheet" href="../testeAlgoritmos.css"/>
+
+	<script>
+		function main() {
+			let palavra = document.getElementById('entrada1').value;
+			let all = [];
+			for (i=0; i<palavra.length; i++) {
+				for(j=palavra.length; j>=0; j--) {
+					if(palavra[i] == palavra[j])
+					{
+						let str = '';
+						let tempi = i;
+						let tempj = j;
+						while(find(palavra[tempi], palavra[tempj]) && tempi <= palavra.length) {
+							if(palavra[tempi] && palavra[tempj])
+								str += palavra[tempi];
+
+							tempi++;
+							tempj--;
+						}
+						if(str.length > 2)
+							all.push(str);
+					}
+				}
+			}
+
+
+			let final = all.length > 0 ? all.reduce(function(a, b){return a.length > b.length ? a : b}) :"Nenhum palíndromo encontrado";
+			document.getElementById('resolucao').innerHTML = "Entrada: " + palavra + '<br>Saída: ' + final;
+			document.getElementById('codigo').classList.remove('oculto')
+		}
+
+		function find(str1, str2) {
+			if(str1 == str2)
+				return true;
+			return false;
+		}
+	</script>
+
+</head>
+<body>
+	<div class="exercicios">
+		<p>11. Implemente uma função que retorne o maior palíndromo dentro de uma sentença.</p>
+
+		<p>Exemplo: <b>testeararatst</b> - retorna <b>arara</b></p>
+
+		<div class="form">
+			<input id="entrada1" type="text" placeholder="Entrada" value="1234" />
+			<button onClick="main()">Executar</button>
+		</div>
+
+		<div id="resolucao">
+		</div>
+		<div id="codigo" class="codigo oculto">
+			<div class="title">Código:</div>
+			function main() {
+				let palavra = document.getElementById('entrada1').value;
+				let all = [];
+				for (i=0; i<palavra.length; i++) {
+					for(j=palavra.length; j>=0; j--) {
+						if(palavra[i] == palavra[j])
+						{
+							let str = '';
+							let tempi = i;
+							let tempj = j;
+							while(find(palavra[tempi], palavra[tempj]) && tempi <= palavra.length) {
+								if(palavra[tempi] && palavra[tempj])
+								str += palavra[tempi];
+
+								tempi++;
+								tempj--;
+							}
+							if(str.length > 2)
+							all.push(str);
+						}
+					}
+				}
+
+				let final = all.length > 0 ? all.reduce(function(a, b){return a.length > b.length ? a : b}) :"Nenhum palíndromo encontrado";
+				document.getElementById('resolucao').innerHTML = "Entrada: " + palavra + ' Saída: ' + final;
+			}
+
+			function find(str1, str2) {
+				if(str1 == str2)
+				return true;
+				return false;
+			}
+		</div>
+		<div class="homeButton">
+			<a href="../index.html">
+				<img src="../home-icon.png" alt="Home" title="Home"/>
+			</a>
+		</div>
+	</div>
+</body>
+</html>
